@@ -1,19 +1,17 @@
 import { useSelector, useDispatch } from "react-redux";
 import { toggleTheme } from "../store/ThemeSlices";
+import { Sun, Moon } from "lucide-react";
 
-const Theme = () => {
+const ThemeToggleButton = () => {
     const mode = useSelector((state) => state.theme.mode);
     const dispatch = useDispatch();
     return (
         <button onClick={() => dispatch(toggleTheme())}
-            style={
-                mode === 'light' ?
-                    { backgroundColor: 'black', color: 'white' }
-                    :
-                    { backgroundColor: 'white', color: 'black' }}
-        >
-            switch to = {mode === 'light' ? 'dark' : 'light'}
-        </button>
+            className={mode === "light" ? "text-gray-900 bg-transparent" : "text-white bg-bg-transparent"}>
+            {mode === 'light' ? <Moon /> : <Sun />}
+        </button >
     )
 
 }
+
+export default ThemeToggleButton

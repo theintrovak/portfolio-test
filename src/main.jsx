@@ -9,7 +9,7 @@ import Header from './components/header/HEader.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store} >
-      <Header />
+      <App />
     </Provider>
   </StrictMode>,
 )

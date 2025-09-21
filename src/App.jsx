@@ -3,7 +3,7 @@ import Home from './pages/Home'
 
 import './App.css'
 import ThemeApplier from './components/ThemeApplier'
-import Header from './components/header/HEader'
+import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 
 function App() {

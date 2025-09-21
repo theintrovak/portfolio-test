@@ -1,6 +1,8 @@
-import React, { useState } from "react";
 import Button from "../components/button";
 import Contactus from "../components/Contactus";
+import profile from '../../public/profile.png'
+import banner from '../../public/banner1.jpg'
+
 export default function Portfolio() {
 
 
@@ -12,7 +14,7 @@ export default function Portfolio() {
                 <div className="container mx-auto px-6 pt-5 pb-40 text-center relative  z-10">
                     <div className="relative mx-auto border-4 border-t-transparent border-l-transparent border-r-transparent  w-60 h-60 rounded-full overflow-hidden" >
                         <img
-                            src="../../public/profile.png"
+                            src={profile}
                             alt="Designer"
                             className="absolute -top-17 left-1/2 transform -translate-x-1/2 w-80 h-96 object-cover rounded-full  "
                         />
@@ -29,7 +31,7 @@ export default function Portfolio() {
             </section>
             <section id="about" className="  container my-10 py-20 grid md:grid-cols-2 gap-10 items-center ">
                 <img
-                    src="../../public/banner1.jpg"
+                    src={banner}
                     alt="About"
                     className="rounded-2xl h-full w-full shadow-lg"
                 />

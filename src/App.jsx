@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import './App.css'
 import ThemeApplier from './components/ThemeApplier'
 import Header from './components/header/HEader'
+import Footer from './components/footer/Footer'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <ThemeApplier />
       <Header />
       <Home />
+      <Footer />
 
     </>
   )

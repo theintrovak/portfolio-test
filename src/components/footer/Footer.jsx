@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
     return (
-        <footer className="bg-gray-900 text-gray-100 py-8">
+        <footer className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-600 text-gray-100 py-8">
             <div className="container mx-auto flex flex-col items-center">
                 <p className="mb-4">Connect with me:</p>
                 <div className="flex space-x-6">

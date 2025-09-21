@@ -2,11 +2,14 @@ import React from 'react'
 import Input from "../components/Input";
 import Button from "../components/button";
 import { useRef } from 'react';
-import { emailjs } from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import conf from '../conf/conf'
+import { useForm } from 'react-hook-form'
+
 
 function Contactus() {
     const form = useRef();
+    const { isSubmitting } = useForm()
     const sendEmail = (e) => {
         e.preventDefault();
         emailjs.sendForm(conf.serviceid, conf.templateid, form.current, conf.publickey)
@@ -33,7 +36,7 @@ function Contactus() {
                     rows="4"
                     required
                 ></textarea>
-                <Button variant="secondary" type="submit"  >Send Message</Button>
+                <Button variant="secondary" type="submit"  >{(isSubmitting) ? "sending..." : "send Message"}</Button>
             </form>
         </div>
     )

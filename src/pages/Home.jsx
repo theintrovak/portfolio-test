@@ -4,6 +4,30 @@ import Contactus from "../components/Contactus";
 // import banner from '../../public/banner1.jpg'
 
 export default function Portfolio() {
+    const projects = [
+        {
+            id: 1,
+            title: "blog app",
+            description: "A modern blogging platform where users can create, edit, and share articles with a clean and responsive design.",
+            image: "/project 1.png",
+            link: "https://blog-delta-beryl-93.vercel.app/"
+
+        },
+        {
+            id: 2,
+            title: "Project 2",
+            description: "A professional and responsive business landing page designed to showcase services, highlight key features, and drive customer engagement with a modern UI.",
+            image: "/project 2.png",
+            link: "https://landing-page-nine-theta-28.vercel.app/"
+        },
+        {
+            id: 3,
+            title: "Project 3",
+            description: "A personal portfolio website built to showcase projects, skills, and achievements with a clean, responsive, and modern design.",
+            image: "/project 3.png",
+            link: "https://anurag-sigma.vercel.app/"
+        },
+    ]
 
 
     return (
@@ -24,7 +48,7 @@ export default function Portfolio() {
                     </h1>
                     <p className="text-xl mt-3">Front-End Designer & Developer</p>
                     <div className="flex justify-center gap-4 mt-6">
-                        <Button variant="primary" onClick={() => (window.location.href = '#contact')} >Hire Me</Button>
+                        <Button variant="primary" onClick={() => (window.location.href = '#contact')} >     Hire Me</Button>
                         <Button variant="secondary">Get CV</Button>
                     </div>
                 </div>
@@ -92,17 +116,17 @@ export default function Portfolio() {
                         Recently Done Projects
                     </h2>
                     <div className="grid md:grid-cols-3 gap-6">
-                        {[1, 2, 3].map((p) => (
+                        {projects.map((project) => (
                             <div
-                                key={p}
-                                className="bg-white dark:bg-gray-700 rounded-2xl shadow overflow-hidden">
+                                key={project.id}
+                                className="bg-white dark:bg-gray-700 hover:scale-105 hover:shadow-2xl  transition-all duration-500  rounded-2xl shadow overflow-hidden">
                                 <img
-                                    src={`https://via.placeholder.com/400x250?text=Project+${p}`}
-                                    alt={`Project ${p}`}
+                                    src={project.image}
+                                    alt={project.title}
                                     className="w-full h-48 object-cover" />
                                 <div className="p-4">
-                                    <h3 className="font-bold text-lg">Project {p}</h3>
-                                    <p className="text-gray-600 dark:text-gray-300">Creative web design project.</p>
+                                    <h3 className="font-bold text-lg">{project.title}</h3>
+                                    <p className="text-gray-600 dark:text-gray-300">{project.description}</p>
                                 </div>
                             </div>
                         ))}

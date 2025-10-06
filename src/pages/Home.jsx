@@ -48,16 +48,16 @@ export default function Portfolio() {
                     </h1>
                     <p className="text-xl mt-3">Front-End Designer & Developer</p>
                     <div className="flex justify-center gap-4 mt-6">
-                        <Button variant="primary" onClick={() => (window.location.href = '#contact')} >     Hire Me</Button>
+                        <Button variant="primary" onClick={() => (window.location.href = '#contact')} >Hire Me</Button>
                         <Button variant="secondary">Get CV</Button>
                     </div>
                 </div>
             </section>
             <section id="about" className="  container my-10 py-20 grid md:grid-cols-2 gap-10 items-center ">
                 <img
-                    src='/banner1.jpg'
+                    src='/banner 1.png'
                     alt="About"
-                    className="rounded-2xl h-full w-full shadow-lg"
+                    className="rounded-2xl h-full w-full shadow-none"
                 />
                 <div>
                     <h2 className="text-3xl font-bold mb-4">Let’s Introduce About Myself</h2>

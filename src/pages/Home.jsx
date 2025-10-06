@@ -127,6 +127,7 @@ export default function Portfolio() {
                                 <div className="p-4">
                                     <h3 className="font-bold text-lg">{project.title}</h3>
                                     <p className="text-gray-600 dark:text-gray-300">{project.description}</p>
+                                    <a href={project.link} className="mt-2 text-blue-500">Visit Page</a>
                                 </div>
                             </div>
                         ))}

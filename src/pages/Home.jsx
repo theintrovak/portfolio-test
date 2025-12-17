@@ -1,3 +1,4 @@
+import { SparklesCore } from "@/components/ui/sparkles";
 import Button from "../components/button";
 import Contactus from "../components/Contactus";
 // import profile from '../../public/profile.png'
@@ -32,41 +33,83 @@ export default function Portfolio() {
 
     return (
 
-        <div className="font-sans text-gray-900 dark:text-gray-100 dark:bg-[#12101082] ">
+        <div className="font-sans text-gray-900 dark:text-gray-100 dark:bg-[#000000] ">
             <section id="home" className="relative bg-gradient-to-b from-[#000000df]  to-[#ffffff00] text-white overflow-hidden">
 
-                <div className="container mx-auto px-6 pt-5 pb-40 text-center relative  z-10">
-                    <div className="relative mx-auto border-4 border-t-transparent border-l-transparent border-r-transparent  w-60 h-60 rounded-full overflow-hidden" >
+                <div className="container mx-auto px-6 pt-5 pb-10 text-center relative  z-10">
+
+                    <div className=" mx-auto my-3 bg-transparent flex flex-col items-center justify-center overflow-hidden rounded-md">
                         <img
                             src='/profile.png'
                             alt="Designer"
-                            className="absolute -top-17 left-1/2 transform -translate-x-1/2 w-80 h-96 object-cover rounded-full  "
+                            className=" -translate-x-2.5 w-75  "
+
                         />
+                        <div className="w-[40rem] h-20 relative ">
+                            {/* Gradients */}
+                            <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+                            <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+                            <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+                            <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+                            <SparklesCore
+                                background="transparent"
+                                minSize={0.4}
+                                maxSize={1}
+                                particleDensity={500}
+                                className="w-[25rem] ml-[7.5rem]  h-full"
+                                particleColor="#FFFFFF"
+                            />
+                            <div className="absolute inset-0 w-full h-full dark:bg-black [mask-image:radial-gradient(250px_80px_at_top,transparent_20%,white)]"></div>
+                        </div>
                     </div>
-                    <h1 className="text-6xl font-extrabold mt-6 tracking-wide text-white ">
+                    <h1 className="md:text-5xl lg:text-6xl text-3xl mt-0  font-bold text-center text-white relative z-20">
                         ANURAG KURMI
                     </h1>
                     <p className="text-xl mt-3">Front-End Designer & Developer</p>
-                    <div className="flex justify-center gap-4 mt-6">
+                    <div className="flex justify-center gap-4 mt-6 mb-0">
                         <Button variant="primary" onClick={() => (window.location.href = '#contact')} >Hire Me</Button>
                         <Button variant="secondary">Get CV</Button>
                     </div>
                 </div>
             </section>
-            <section id="about" className="  container my-10 py-20 grid md:grid-cols-2 gap-10 items-center ">
+            <section id="about" className="  container my-0 py-0 grid md:grid-cols-2 gap-10 items-center ">
                 <img
                     src='/banner 1.png'
                     alt="About"
                     className="rounded-2xl h-full w-full shadow-none"
                 />
-                <div>
+                <div className="mx-3">
                     <h2 className="text-3xl font-bold mb-4">Let’s Introduce About Myself</h2>
-                    <p className="text-lg mb-6">
+                    <p className="text-lg mb-6 mx-4">
                         I’m a passionate front-end designer with expertise in creating
                         visually appealing and user-friendly web interfaces. My goal is to
                         deliver smooth, modern, and engaging digital experiences.
                     </p>
-                    <Button variant="primary">Download CV</Button>
+                    <Button variant="primary" >Download CV</Button>
+                </div>
+            </section>
+            <section id="projects" className="  bg-[#0000006e] py-20  ">
+                <div className="container mx-auto px-6">
+                    <h2 className="text-3xl font-bold text-center mb-10">
+                        Recently Done Projects
+                    </h2>
+                    <div className="grid md:grid-cols-3 gap-6">
+                        {projects.map((project) => (
+                            <div
+                                key={project.id}
+                                className="bg-white dark:bg-gray-700 hover:scale-105 hover:shadow-2xl  transition-all duration-500  rounded-2xl shadow overflow-hidden">
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="w-full h-48 object-cover" />
+                                <div className="p-4">
+                                    <h3 className="font-bold text-lg">{project.title}</h3>
+                                    <p className="text-gray-600 dark:text-gray-300">{project.description}</p>
+                                    <a target="_blank " href={project.link} className="mt-2 text-blue-500">Visit Page</a>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
             <section id="work" className="relative bg-[#0000006e] py-20 overflow-hidden">
@@ -110,30 +153,7 @@ export default function Portfolio() {
                     )}
                 </div>
             </section>
-            <section id="projects" className="  bg-[#0000006e] py-20  ">
-                <div className="container mx-auto px-6">
-                    <h2 className="text-3xl font-bold text-center mb-10">
-                        Recently Done Projects
-                    </h2>
-                    <div className="grid md:grid-cols-3 gap-6">
-                        {projects.map((project) => (
-                            <div
-                                key={project.id}
-                                className="bg-white dark:bg-gray-700 hover:scale-105 hover:shadow-2xl  transition-all duration-500  rounded-2xl shadow overflow-hidden">
-                                <img
-                                    src={project.image}
-                                    alt={project.title}
-                                    className="w-full h-48 object-cover" />
-                                <div className="p-4">
-                                    <h3 className="font-bold text-lg">{project.title}</h3>
-                                    <p className="text-gray-600 dark:text-gray-300">{project.description}</p>
-                                    <a target="_blank " href={project.link} className="mt-2 text-blue-500">Visit Page</a>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
             <section id="reviews" className="container mx-auto px-6 py-20">
                 <h2 className="text-3xl font-bold text-center mb-10">Reviews</h2>
                 <div className="grid md:grid-cols-3 gap-6">

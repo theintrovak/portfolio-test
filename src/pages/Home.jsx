@@ -1,6 +1,8 @@
 import { SparklesCore } from "@/components/ui/sparkles";
 import Button from "../components/button";
+import { HoverEffect } from "@/components/ui/card-hover-effect";
 import Contactus from "../components/Contactus";
+
 // import profile from '../../public/profile.png'
 // import banner from '../../public/banner1.jpg'
 
@@ -33,7 +35,7 @@ export default function Portfolio() {
 
     return (
 
-        <div className="font-sans text-gray-900 dark:text-gray-100 dark:bg-[#000000] ">
+        <div className="font-sans text-gray-900 dark:text-gray-100  ">
             <section id="home" className="relative bg-gradient-to-b from-[#000000df]  to-[#ffffff00] text-white overflow-hidden">
 
                 <div className="container mx-auto px-6 pt-5 pb-10 text-center relative  z-10">
@@ -59,7 +61,7 @@ export default function Portfolio() {
                                 className="w-[25rem] ml-[7.5rem]  h-full"
                                 particleColor="#FFFFFF"
                             />
-                            <div className="absolute inset-0 w-full h-full dark:bg-black [mask-image:radial-gradient(250px_80px_at_top,transparent_20%,white)]"></div>
+                            <div className="absolute inset-0 w-full h-full dark:bg-black  [mask-image:radial-gradient(250px_80px_at_top,transparent_20%,white)]"></div>
                         </div>
                     </div>
                     <h1 className="md:text-5xl lg:text-6xl text-3xl mt-0  font-bold text-center text-white relative z-20">
@@ -93,22 +95,10 @@ export default function Portfolio() {
                     <h2 className="text-3xl font-bold text-center mb-10">
                         Recently Done Projects
                     </h2>
-                    <div className="grid md:grid-cols-3 gap-6">
-                        {projects.map((project) => (
-                            <div
-                                key={project.id}
-                                className="bg-white dark:bg-gray-700 hover:scale-105 hover:shadow-2xl  transition-all duration-500  rounded-2xl shadow overflow-hidden">
-                                <img
-                                    src={project.image}
-                                    alt={project.title}
-                                    className="w-full h-48 object-cover" />
-                                <div className="p-4">
-                                    <h3 className="font-bold text-lg">{project.title}</h3>
-                                    <p className="text-gray-600 dark:text-gray-300">{project.description}</p>
-                                    <a target="_blank " href={project.link} className="mt-2 text-blue-500">Visit Page</a>
-                                </div>
-                            </div>
-                        ))}
+                    <div className=" gap-6">
+                        <HoverEffect
+                            items={projects}
+                        />
                     </div>
                 </div>
             </section>

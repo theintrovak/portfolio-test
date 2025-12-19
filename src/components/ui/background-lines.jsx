@@ -10,7 +10,7 @@ export const BackgroundLines = ({
 }) => {
   return (
     <div
-      className={cn("w-screenh-screen fixed inset-0 overflow-hidden bg-white dark:bg-black", className)}>
+      className={cn("w-screen h-[100lvh] fixed inset-0 overflow-hidden bg-white dark:bg-black", className)}>
       <SVG svgOptions={svgOptions} />
       {children}
     </div>
